@@ -58,6 +58,8 @@ proxies:
 proxy-groups:
     - { name: 节点选择, type: select, proxies: [自动选择, 日本-优化, 日本-优化2, 日本-优化3, 新加坡-优化-Gemini-GPT, 新加坡-优化2-Gemini-GPT, 新加坡-优化3-Gemini, 香港-优化-Gemini, 香港-优化2-Gemini, 香港-优化3-Gemini, 香港WAP-优化-Gemini, 香港WAP-优化2-Gemini, 香港WAP-优化3-Gemini, 印度-优化, 台湾-优化, 台湾-优化2-GPT, 台湾-优化3, 美国LA-优化-GPT, 美国LA-优化2-GPT, 美国LA-优化3-GPT, 加拿大-优化, 加拿大-优化2, 加拿大-优化3, 德国-优化, 德国-优化2, 英国-优化-GPT, 英国-优化2, 英国-优化3] }
     - { name: 自动选择, type: url-test, proxies: [日本-优化, 日本-优化2, 日本-优化3, 新加坡-优化-Gemini-GPT, 新加坡-优化2-Gemini-GPT, 新加坡-优化3-Gemini, 香港-优化-Gemini, 香港-优化2-Gemini, 香港-优化3-Gemini, 香港WAP-优化-Gemini, 香港WAP-优化2-Gemini, 香港WAP-优化3-Gemini, 台湾-优化, 台湾-优化2-GPT, 台湾-优化3], url: 'http://www.YouTube.com', interval: 600, tolerance: 200 }
+    - { name: 群晖, type: select, proxies: [节点选择, DIRECT, REJECT] }
+
 rule-providers:
   GitHub:
     behavior: "classical"
@@ -94,6 +96,13 @@ rule-providers:
     format: 'yaml'
     interval: 3600
     path: ./Telegram.yaml
+  Synology:
+    behavior: "classical"
+    type: http
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Synology/Synology.yaml
+    format: 'yaml'
+    interval: 3600
+    path: ./Synology.yaml
 rules:
     - 'DOMAIN,mjcdnsub.mjurl.com,DIRECT'
     - 'RULE-SET,GitHub,自动选择'
@@ -102,4 +111,5 @@ rules:
     - 'RULE-SET,Telegram,自动选择'
     - 'RULE-SET,AdvertisingLite,REJECT'
     - 'DOMAIN-KEYWORD,mojie,自动选择'
+    - 'RULE-SET,Synology,群晖'
     - 'MATCH,DIRECT'
