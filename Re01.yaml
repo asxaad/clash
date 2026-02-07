@@ -1,3 +1,0 @@
-#丢弃的规则集，用于拒绝规则，域名形式的
-payload:
-  - DOMAIN-KEYWORD,quickconnect
