@@ -1,0 +1,105 @@
+mixed-port: 7890
+ipv6: true
+udp: true
+allow-lan: false
+bind-address: '*'
+mode: rule
+log-level: info
+unified-delay: true
+experimental:
+    ignore-resolve-fail: true
+cfw-latency-timeout: 8000
+cfw-latency-url: 'http://YouTube.com/generate_204'
+cfw-conn-break-strategy: true
+hosts:
+    mtalk.google.com: 108.177.125.188
+    services.googleapis.cn: 74.125.203.94
+dns:
+    enable: true
+    listen: '127.0.0.1:1053'
+    ipv6: true
+    default-nameserver: [114.114.114.114, 223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 28.0.0.1/8
+    use-hosts: true
+    fake-ip-filter: ['*.lan', '*.localdomain', '*.example', '*.invalid', '*.localhost', '*.test', '*.local', '*.home.arpa', 'time.*.com', 'time.*.gov', 'time.*.edu.cn', 'time.*.apple.com', 'time1.*.com', 'time2.*.com', 'time3.*.com', 'time4.*.com', 'time5.*.com', 'time6.*.com', 'time7.*.com', 'ntp.*.com', 'ntp1.*.com', 'ntp2.*.com', 'ntp3.*.com', 'ntp4.*.com', 'ntp5.*.com', 'ntp6.*.com', 'ntp7.*.com', '*.time.edu.cn', '*.ntp.org.cn', +.pool.ntp.org, time1.cloud.tencent.com, music.163.com, '*.music.163.com', '*.126.net', musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, '*.kuwo.cn', api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, '*.y.qq.com', streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, '*.xiami.com', '*.music.migu.cn', music.migu.cn, +.msftconnecttest.com, +.msftncsi.com, msftconnecttest.com, msftncsi.com, localhost.ptlogin2.qq.com, localhost.sec.qq.com, +.srv.nintendo.net, +.stun.playstation.net, 'xbox.*.microsoft.com', xnotify.xboxlive.com, +.ipv6.microsoft.com, +.battlenet.com.cn, +.wotgame.cn, +.wggames.cn, +.wowsgame.cn, +.wargaming.net, proxy.golang.org, 'stun.*.*', 'stun.*.*.*', '+.stun.*.*', '+.stun.*.*.*', '+.stun.*.*.*.*', heartbeat.belkin.com, '*.linksys.com', '*.linksyssmartwifi.com', '*.router.asus.com', mesu.apple.com, swscan.apple.com, swquery.apple.com, swdownload.apple.com, swcdn.apple.com, swdist.apple.com, lens.l.google.com, stun.l.google.com, '*.square-enix.com', '*.finalfantasyxiv.com', '*.ffxiv.com', '*.ff14.sdo.com', ff.dorado.sdo.com, '*.mcdn.bilivideo.cn', +.media.dssott.com, +.pvp.net]
+    nameserver-policy: { m.cnmjin.net: ['https://api.edgequery.cc:40443/dns-query', 'https://39.173.146.159:8443/dns-query', 'https://36.150.95.34:8443/dns-query', 'https://api.edgequery.net:40443/dns-query'] }
+    nameserver: ['https://223.5.5.5/dns-query', 'https://doh.pub/dns-query', 119.29.29.29, 223.5.5.5, 'tls://223.5.5.5:853', 'tls://223.6.6.6:853']
+    fallback: ['https://223.5.5.5/dns-query', 'https://doh.pub/dns-query']
+    fallback-filter: { geoip: false }
+proxies:
+    - { name: 日本-优化, type: vmess, server: planb.mojcn.com, port: 16617, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 日本-优化2, type: vmess, server: m.cnmjin.net, port: 16617, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 日本-优化3, type: vmess, server: t.cnmjcn.cyou, port: 16617, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 新加坡-优化-Gemini-GPT, type: vmess, server: planb.mojcn.com, port: 16618, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 新加坡-优化2-Gemini-GPT, type: vmess, server: m.cnmjin.net, port: 16618, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 新加坡-优化3-Gemini, type: vmess, server: t.cnmjcn.cyou, port: 16618, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 香港-优化-Gemini, type: vmess, server: planb.mojcn.com, port: 16632, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 香港-优化2-Gemini, type: vmess, server: m.cnmjin.net, port: 16632, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 香港-优化3-Gemini, type: vmess, server: t.cnmjcn.cyou, port: 16632, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 香港WAP-优化-Gemini, type: vmess, server: planb.mojcn.com, port: 16622, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 香港WAP-优化2-Gemini, type: vmess, server: m.cnmjin.net, port: 16622, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 香港WAP-优化3-Gemini, type: vmess, server: t.cnmjcn.cyou, port: 16622, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 印度-优化, type: vmess, server: planb.mojcn.com, port: 16626, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 台湾-优化, type: vmess, server: planb.mojcn.com, port: 16616, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 台湾-优化2-GPT, type: vmess, server: m.cnmjin.net, port: 16616, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 台湾-优化3, type: vmess, server: t.cnmjcn.cyou, port: 16616, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 美国LA-优化-GPT, type: vmess, server: planb.mojcn.com, port: 16648, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 美国LA-优化2-GPT, type: vmess, server: m.cnmjin.net, port: 16648, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 美国LA-优化3-GPT, type: vmess, server: t.cnmjcn.cyou, port: 16648, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 加拿大-优化, type: vmess, server: planb.mojcn.com, port: 16641, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 加拿大-优化2, type: vmess, server: m.cnmjin.net, port: 16641, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 加拿大-优化3, type: vmess, server: t.cnmjcn.cyou, port: 16641, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 德国-优化, type: vmess, server: planb.mojcn.com, port: 16644, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 德国-优化2, type: vmess, server: m.cnmjin.net, port: 16644, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 英国-优化-GPT, type: vmess, server: planb.mojcn.com, port: 16645, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 英国-优化2, type: vmess, server: m.cnmjin.net, port: 16645, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+    - { name: 英国-优化3, type: vmess, server: t.cnmjcn.cyou, port: 16645, uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }, ws-path: /, ws-headers: { Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com } }
+proxy-groups:
+    - { name: 节点选择, type: select, proxies: [自动选择, 日本-优化, 日本-优化2, 日本-优化3, 新加坡-优化-Gemini-GPT, 新加坡-优化2-Gemini-GPT, 新加坡-优化3-Gemini, 香港-优化-Gemini, 香港-优化2-Gemini, 香港-优化3-Gemini, 香港WAP-优化-Gemini, 香港WAP-优化2-Gemini, 香港WAP-优化3-Gemini, 印度-优化, 台湾-优化, 台湾-优化2-GPT, 台湾-优化3, 美国LA-优化-GPT, 美国LA-优化2-GPT, 美国LA-优化3-GPT, 加拿大-优化, 加拿大-优化2, 加拿大-优化3, 德国-优化, 德国-优化2, 英国-优化-GPT, 英国-优化2, 英国-优化3] }
+    - { name: 自动选择, type: url-test, proxies: [日本-优化, 日本-优化2, 日本-优化3, 新加坡-优化-Gemini-GPT, 新加坡-优化2-Gemini-GPT, 新加坡-优化3-Gemini, 香港-优化-Gemini, 香港-优化2-Gemini, 香港-优化3-Gemini, 香港WAP-优化-Gemini, 香港WAP-优化2-Gemini, 香港WAP-优化3-Gemini, 台湾-优化, 台湾-优化2-GPT, 台湾-优化3], url: 'http://www.YouTube.com', interval: 600, tolerance: 200 }
+rule-providers:
+  GitHub:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./GitHub.yaml
+  YouTube:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./YouTube.yaml
+  Google:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./Google.yaml
+  AdvertisingLite:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./AdvertisingLite.yaml
+  Telegram:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./Telegram.yaml
+rules:
+    - 'DOMAIN,mjcdnsub.mjurl.com,DIRECT'
+    - 'RULE-SET,GitHub,自动选择'
+    - 'RULE-SET,YouTube,自动选择'
+    - 'RULE-SET,Google,自动选择'
+    - 'RULE-SET,Telegram,自动选择'
+    - 'RULE-SET,AdvertisingLite,REJECT'
+    - 'DOMAIN-KEYWORD,mojie,自动选择'
+    - 'MATCH,DIRECT'
