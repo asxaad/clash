@@ -99,17 +99,33 @@ rule-providers:
   Synology:
     behavior: "classical"
     type: http
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Synology/Synology.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Synology/Synology.yaml"
     format: 'yaml'
     interval: 3600
     path: ./Synology.yaml
+  RE:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/asxaad/clash@main/RE.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./RE.yaml
+  myproxy:
+    behavior: "classical"
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/asxaad/clash@main/myproxy.yaml"
+    format: 'yaml'
+    interval: 3600
+    path: ./myproxy.yaml
 rules:
     - 'DOMAIN,mjcdnsub.mjurl.com,DIRECT'
-    - 'RULE-SET,GitHub,自动选择'
-    - 'RULE-SET,YouTube,自动选择'
-    - 'RULE-SET,Google,自动选择'
-    - 'RULE-SET,Telegram,自动选择'
+    - 'RULE-SET,GitHub,节点选择'
+    - 'RULE-SET,YouTube,节点选择'
+    - 'RULE-SET,Google,节点选择'
+    - 'RULE-SET,Telegram,节点选择'
     - 'RULE-SET,AdvertisingLite,REJECT'
-    - 'DOMAIN-KEYWORD,mojie,自动选择'
-    - 'RULE-SET,Synology,群晖'
+    - 'DOMAIN-KEYWORD,mojie,节点选择'
+    - 'RULE-SET,myproxy,节点选择'
+    - 'RULE-SET,RE,REJECT'
+    
     - 'MATCH,DIRECT'
